@@ -7,7 +7,7 @@ const harmfulFileExtensionRegex = new RegExp('(.|/)(bat|exe|cmd|sh|php([0-9])?|p
 const imageFileExtesionRegex = /\.(jpg|jpeg|png)$/;
 
 export class FileUploaderService {
-  public static fileListToFileUploadList(fileList: FileList): IFileUpload[] {
+  public static fileListToFileUploadList(fileList: FileList): IFileUpload[] | unknown {
     return Array.prototype.map.call(fileList, (item: File) => FileUploaderService.fileToFileUpload(item));
   }
 
